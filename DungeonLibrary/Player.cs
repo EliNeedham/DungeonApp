@@ -11,9 +11,10 @@ namespace DungeonLibrary
         public Flavor PlayerFlavor { get; set; }
         public Weapon EquippedWeapon { get; set; }
 
-        public Player(Flavor playerFlavor, int hitChance, int block, int life, int maxLife, Weapon equippedWeapon)
+        public Player(string name, int hitChance, int block, int life, int maxLife, Flavor playerFlavor, Weapon equippedWeapon)
         {
             MaxLife = maxLife;
+            Name = name;
             HitChance = hitChance;
             Block = block;
             Life = life;
@@ -68,7 +69,7 @@ namespace DungeonLibrary
                     description = "Linda Belcher. Eccentric, loud, excitable and suffers from foot in mouth syndrome. She loves hosting parties, bed and breakfasts, dinner theater, her kids, Bob, singing, small talk, and booze. In her own words: “Mommy doesn’t get drunk. Mommy has fun.” Lida is happy, kind, loving, and caring. Usually wearing an apron, with large horn rimmed red glasses, long black hair and very intense eyes.";
                     break;
                 case Flavor.Gene:
-                    description = "Gene Belcher. Annoying, funny, and downright strange. Gene has about the same amount of regard for social convention as he has for nutrition. His interests include: playing the keyboard, pulling pranks, farting, eating, sound effects, and jokes. Gene has an interest in performance art and dreams of being a musician – he believes that the highest calling in the world is to design catchy commercial jingles. Often wearing a hamburger body suit, a portly little boy with no regard for personal hygiene - which to him is a greeting...";
+                    description = "Gene Belcher. Annoying, funny, and downright strange. Gene has about the same amount of regard for social convention as he has for nutrition. His interests include: playing the keyboard, pulling pranks, bodily functions, eating, sound effects, and jokes. Gene has an interest in performance art and dreams of being a musician – he believes that the highest calling in the world is to design catchy commercial jingles. Often wearing a hamburger body suit, a portly little boy with no regard for personal hygiene - which to him is a greeting...";
                     break;
                 case Flavor.JimmyJunior:
                     description = "Jimmy Pesto Junior. Works as the busboy at Jimmy Pesto's Pizzeria. He is Tina's classmate, love interest and on-again, off-again boyfriend. He has a noticeable speech impediment, and loves dancing. He appears to be among the most popular students at Wagstaff Middle School. He is a blond pubescent boy, wearing pants he won't rip when he wants to bust a move.";

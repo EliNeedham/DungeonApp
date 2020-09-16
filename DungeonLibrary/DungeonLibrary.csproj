@@ -48,11 +48,5 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weapon.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DungeonMonster\DungeonMonster.csproj">
-      <Project>{fe8d64bc-29eb-411c-81dc-5a291e491769}</Project>
-      <Name>DungeonMonster</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
