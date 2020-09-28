@@ -13,17 +13,92 @@ namespace Dungeon
         static void Main(string[] args)
         {
             Console.Title = "Elizabeth's Bob's Burgers Dungeon";
-            Console.WriteLine("Welcome to our humble commode! Abode? Whatever, it's a dungeon with a real burger taste!\n\n");
+            Console.WriteLine("Welcome to our humble commode! Abode? Whatever, it's a dungeon....\n with a real burger taste!\n\n");
 
 
-            //create a loop for the player menu
-            //bool reloadAfterPlayerChoice = false;
+
+            #region Player Choice Switch inside while loop
+            bool exitPlayerSwitch = false;
+
+            while (exitPlayerSwitch == false)
+            {
+
+                ConsoleKey userPlayer = Console.ReadKey(true).Key;
+                switch (userPlayer)
+
+                {
+                    case ConsoleKey.A:
+                        Console.WriteLine("Good idea, I knew you were smarter than you looked!\n");
+                        Console.ReadLine();
+                        Console.WriteLine("Winner gets to read Tina’s diary\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.B:
+                        Console.WriteLine("Hit me with your best shallot!\n");
+                        Console.ReadLine();
+                        Console.WriteLine("Winner gets to come up with tomorrow's \"Burger of the Day\"\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.C:
+                        Console.WriteLine("uhhhhhhhhhhhh\n Tina groans from stagefright...\nTime for the charm bomb to explode.\n");
+                        Console.ReadLine();
+                        Console.WriteLine("Winner gets to kiss Jimmy Junior's cheeks\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.D:
+                        Console.WriteLine("I love showers and mornings and bologna and turtles!\n");
+                        Console.ReadLine();
+                        Console.WriteLine("If anything happens don’t call AAA because we don’t have them and we owe them money from when we did.\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.E:
+                        Console.WriteLine("You should know when you hold hands with me, you are holding hands with everything I've ever eaten.\n");
+                        Console.ReadLine();
+                        Console.WriteLine("I'm not taking the burger suit off. Even if we win.\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.F:
+                        Console.WriteLine("I'm the Katniss to your Pita bread.\n");
+                        Console.ReadLine();
+                        Console.WriteLine("You haven't won until you've beaten me in a dance off!\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.G:
+                        Console.WriteLine("Seriously? I'm not even from Canada....\n");
+                        Console.ReadLine();
+                        Console.WriteLine("May the best... may someone win so we can get this over with.\n");
+                        Console.ReadLine();
+                        Console.Clear();
+                        exitPlayerSwitch = true;
+                        break;
+                    case ConsoleKey.X:
+                        Console.WriteLine("Whatever.\n");
+                        Console.ReadLine();
+                        exitPlayerSwitch = true;
+                        break;
+                    default:
+                        Console.WriteLine("uuuuuuhhhhhh\n That didn't make any sense. Try again\n");
+                        Console.ReadLine();
+                        exitPlayerSwitch = true;
+                        break;
+                }
+
+            }
 
 
-                #region Player Choice Switch
-
-
-                #endregion
+            #endregion
 
 
             #region ==================WEAPONS===========================
@@ -38,6 +113,7 @@ namespace Dungeon
             Weapon ninjaStar = new Weapon(4, 8, "Bob's credit card cut into a ninja star", 6, false);
             Weapon spatula = new Weapon(2, 4, "Burger Spatula", 16, false);
             Weapon cheeseGrater = new Weapon(2, 4, "Cheese Grater", 14, false);
+            Weapon mrBusiness = new Weapon(1, 2, "Mr Business", 5, false);
             #endregion
 
             #region ===================Players==========================
@@ -96,82 +172,74 @@ namespace Dungeon
             //I'm not sure what to do here - I want the monsters to have sepcial powers each but I'm not sure how to really do that without constructing the character class differently - so that there would be more things that woudl affect the outcome of battle
 
 
-            //TODO 6. Create a loop for the menu of option
-            //bool reload = false;
+            //Create a loop for the menu of option
 
-            //do
-            //{ 
+            #region ===================== LOOP FOR MENU OF OPTIONS ===================================
 
-            ////TODO 7. Create a menu of options
-            //Console.WriteLine("\nChoose an action:\nA) Attack\nR) Run Away\nP) Player Info\nM) Monster Info\nX) Exit\n");
 
-            ////TODO 8. Catch the user choice
-            //ConsoleKey userChoice = Console.ReadKey(true).Key;
+            bool reload = false;
 
-            ////TODO 9. Clear the Console
-            //Console.Clear();
+            do
+            {
+                Console.WriteLine("======================");
+                Console.WriteLine("| Choose an action: |");
+                Console.WriteLine("|   A)ttack         |");
+                Console.WriteLine("|   H)url Insults   |");
+                Console.WriteLine("|   R)un Away       |");
+                Console.WriteLine("|   Q)uit           |");
+                Console.WriteLine("|   P)layer Deets   |");
+                Console.WriteLine("|   M)uenster Deets |");
+                Console.WriteLine("======================");
 
-            //    //TODO 10. build out the switch for user choice
-            //    switch (userChoice)//we are turning on the userChoice
-            //    {
-            //        case ConsoleKey.A:
+                ConsoleKey userChoice = Console.ReadKey(true).Key;
+                Console.Clear();
+                switch (userChoice)
+                {
+                    case ConsoleKey.A:
+                        //11. TODO handle an attack sequence
+                        Console.WriteLine("\nYou boldy advance on the monster with");
+                        //12. Handle if the player wins
+                        break;
+                    case ConsoleKey.H:
+                        Console.WriteLine("\nYou hurl your most poignant insult at the beast.");
+                        //TODO handle insult sequence 1 in 4 chance of causing damage and then monster gets to attack
+                        break;
+                    case ConsoleKey.R:
+                        Console.WriteLine("\nAnthrax! Run for your lives!!");
+                        //TODO insert insult array randomizer here???
+                        //13. Monster getting a free attack
 
-            //            // 11. handle an attack sequence
-            //            //if (player.CharacterRace == Race.CanadianJesus)
-            //            //{
-            //            //    Combat.DoAttack(player, monster);
-            //            //    //give player extra attack at the beginning if they are a certain character race.
-            //            //}
-            //            //Combat.DoBattle(player, monster);
-            //            //this is a round of battle - player attacks monster, monster attacks palyer
+                        //single attack call on doattack()
 
-            //            //12. Handle if the player wins
-            //            //if (monster.Life <= 0)
-            //            //{
-            //            //    //the monster is DEAD
-            //            //    //you could put some logic here to have the player collect an item, get life back or something similar
-            //            //    Console.ForegroundColor = ConsoleColor.Green;
-            //            //    Console.WriteLine("\nYou killed {0}\n", monster.Name);
-            //            //    Console.ResetColor();
-            //            //    reload = true; //this breaks us out of the inner loop but not the OUTER loop. this will allow the player to be put in a new room with a new monster. 
-            //            //    score++;
-            //            //}
+                        //Console.WriteLine($"{monster.Name} attacks as you flee!");
+                        //Combat.DoAttack(monster, player); //free attack - attack of opportunity
+                        //Console.WriteLine();//creat empty line in console
 
-            //            break;
-            //        case ConsoleKey.R:
-            //            Console.WriteLine("RUN AWAY!!");
+                        //14. Exiting the inner loop and getting a new room
+                        reload = true; //exiting the inner loop and will get a new room and monster
+                        break;
+                    case ConsoleKey.Q:
+                        Console.WriteLine("\nMr Frond would say that he is a knitter, not a quitter. Clearly, the same cannot be said for you.");
+                        break;
+                    case ConsoleKey.P:
+                        Console.WriteLine("\nPlayer Deets");
+                        //TODO Console.WriteLine(   PUT VAR CONTAINING PLAYER IN HERE);
+                        //Console.WriteLine("Monsters Defeated: " + score);
 
-            //            //13. Monster getting a free attack
+                        break;
+                    case ConsoleKey.M:
+                        Console.WriteLine("\nMeunster Deets");
+                        //TODO Console.WriteLine(   PUT VAR CONTAINING MONSTER IN HERE);
+                        //AND MAYBE SOME INSULTS??? OR A RANDOMIZER FOR THE BURGER OF THE DAY?
+                        break;
+                    default:
+                        Console.WriteLine("I'm not risking any of those bugs getting into my peach cobbler no matter how stale it is. Try again!");
+                        reload = true;
+                        break;
+                }
+            } while (!reload);
 
-            //            //single attack call on doattack()
-
-            //            Console.WriteLine($"{monster.Name} attacks as you flee!");
-            //            Combat.DoAttack(monster, player); //free attack - attack of opportunity
-            //            Console.WriteLine();//creat empty line in console
-
-            //            //14. Exiting the inner loop and getting a new room
-            //            reload = true; //exiting the inner loop and will get a new room and monster
-            //            break;
-            //        case ConsoleKey.P:
-            //            //15. print out player info
-            //            Console.WriteLine("Player Info");
-            //            Console.WriteLine(player);
-            //            Console.WriteLine("Monsters Defeated: " + score);
-            //            break;
-            //        case ConsoleKey.M:
-            //            //16. print out monster info
-            //            Console.WriteLine("Monster Info");
-            //            Console.WriteLine(monster);
-            //            break;
-            //        case ConsoleKey.X:
-            //        case ConsoleKey.E:
-            //            Console.WriteLine("No one likes a quitter...");
-            //            exit = true;//bc we used this bool on both loops changing the value will exit the user out of both of them at once
-            //            break;
-            //        default:
-            //            Console.WriteLine("Thou hast chosen poorly. Triest thou again.");
-            //            break;
-
+            #endregion
             //            //TODO 11. Handle an attack sequence
 
             //            //TODO 12. Handle if the player wins
@@ -189,33 +257,33 @@ namespace Dungeon
             //    }
 
             //    }
-                
-            }//end main ()
 
-        private static string GetRoom()
-        {
-            //collection initialization syntax - we pass in values 
-            //in canvas there is a room description generator module 4 dungeon room descriptions
-            string[] rooms =
-            {"You find yourself on the grounds of a 2.5 story Victorian manor house with a tower centered above the front doors. Most noticeable, the formal garden with eerily lit statues, an overgrown hedge maze (from which strange lonely sounds are emanating), a tree house (where Felix lives due to being kicked out of the main house because of his sleep apnea), and a field out back where old, broken Wonder Wharf rides are kept. The only thing more terrifying than a carnival ride, is a broken one. Who are we kidding, they're all broken the workers just don't tell you about how little Davey fell off last week due to faulty wiring... That’s right, you’re at Mr Fischoeder’s Mansion!",
-            "You are greeted with the dulcet tones of synth music, billowing fog swirls around your legs and floating circles of light wander along the walls reflecting off the disco ball suspended from the ceiling tiles. You’re affronted by the sickly-sweet smell of the smoke machine (most likely purchased from What the Tech Superstore). That’s right, it’s Tina’s 13th birthday party. It’s a boy/girl party, with mingling. Gene is djing, “Come on boys, you’re the peanut butter. Girls, you’re the jelly. Let’s make some sandwiches!” You ask yourself, “What's The Worcestershire That Could Happen?”",
-            "You're in Mr Frond's office (guidance counselor). Enter Mr Frond, “Attention! There has been a grisly crime committed in my office! (If looks could kale you'd already be dead.) My therapy dolls have been mutilated\" Theo Theo’s stuffing has been ripped out and he is hanging from the ceiling from his yarntrails. Lynne Secure is now finally secured – to the desk – at least what’s left of her….. Pierre Pressure suffered a similar end. The others will have to be identified from yarn records What sick twisted, but really creative kid did this?   Beets Me!",
-            "A very distinct crooning fills your ears. Crooning? Maybe we should’ve said screeching… Linda is on a makeshift stage in the diner, swinging a microphone around at the diners in a concerning and slightly aggressive display. You interrupt her favorite number – her wrath and twisted creative genius is now turned toward you. Dinner Theater has created a Muenster",
-            "Welcome to the freezer dome! It's the Final Kraut Down. You’re dressed in 80’s wrestling gear, a pink leather vest, fuchsia feather boa, a sequined cowboy hat and well, best not to describe the rest… The Belcher children have turned the walk in cooler of Bob’s Burger’s into an ice-skating rink by sneakind down in the middle of the night to dump water on the freezer floor..... The newly dubbed freezer dome is now a fight club slip show. Two kids enter – one kid leaves!",
-            "You enter a dark, cold room. The basement of Bob’s Burgers. Spanning the walls all around are shelves filled with…. Pickled things. Mostly…. oh, mostly pickles. There is a meat grinder on a table in the center, one wrong move could lead to onion-tended consequences….",
+        }//end main ()
 
-            };
+        //private static string GetRoom()
+        //{
+        //    //collection initialization syntax - we pass in values 
+        //    //in canvas there is a room description generator module 4 dungeon room descriptions
+        //    string[] rooms =
+        //    {"You find yourself on the grounds of a 2.5 story Victorian manor house with a tower centered above the front doors. Most noticeable, the formal garden with eerily lit statues, an overgrown hedge maze (from which strange lonely sounds are emanating), a tree house (where Felix lives due to being kicked out of the main house because of his sleep apnea), and a field out back where old, broken Wonder Wharf rides are kept. The only thing more terrifying than a carnival ride, is a broken one. Who are we kidding, they're all broken the workers just don't tell you about how little Davey fell off last week due to faulty wiring... That’s right, you’re at Mr Fischoeder’s Mansion!",
+        //"You are greeted with the dulcet tones of synth music, billowing fog swirls around your legs and floating circles of light wander along the walls reflecting off the disco ball suspended from the ceiling tiles. You’re affronted by the sickly-sweet smell of the smoke machine (most likely purchased from What the Tech Superstore). That’s right, it’s Tina’s 13th birthday party. It’s a boy/girl party, with mingling. Gene is djing, “Come on boys, you’re the peanut butter. Girls, you’re the jelly. Let’s make some sandwiches!” You ask yourself, “What's The Worcestershire That Could Happen?”",
+        //"You're in Mr Frond's office (guidance counselor). Enter Mr Frond, “Attention! There has been a grisly crime committed in my office! (If looks could kale you'd already be dead.) My therapy dolls have been mutilated\" Theo Theo’s stuffing has been ripped out and he is hanging from the ceiling from his yarntrails. Lynne Secure is now finally secured – to the desk – at least what’s left of her….. Pierre Pressure suffered a similar end. The others will have to be identified from yarn records What sick twisted, but really creative kid did this?   Beets Me!",
+        //"A very distinct crooning fills your ears. Crooning? Maybe we should’ve said screeching… Linda is on a makeshift stage in the diner, swinging a microphone around at the diners in a concerning and slightly aggressive display. You interrupt her favorite number – her wrath and twisted creative genius is now turned toward you. Dinner Theater has created a Muenster",
+        //"Welcome to the freezer dome! It's the Final Kraut Down. You’re dressed in 80’s wrestling gear, a pink leather vest, fuchsia feather boa, a sequined cowboy hat and well, best not to describe the rest… The Belcher children have turned the walk in cooler of Bob’s Burger’s into an ice-skating rink by sneakind down in the middle of the night to dump water on the freezer floor..... The newly dubbed freezer dome is now a fight club slip show. Two kids enter – one kid leaves!",
+        //"You enter a dark, cold room. The basement of Bob’s Burgers. Spanning the walls all around are shelves filled with…. Pickled things. Mostly…. oh, mostly pickles. There is a meat grinder on a table in the center, one wrong move could lead to onion-tended consequences….",
 
-            Random rand = new Random();
-            int indexNbr = rand.Next(rooms.Length);
-            string room = rooms[indexNbr];
-            return room;
+        //};
+
+        //    Random rand = new Random();
+        //    int indexNbr = rand.Next(rooms.Length);
+        //    string room = rooms[indexNbr];
+        //    return room;
 
 
-            //we could make this shorter
-            //return rooms[new Random().Next(rooms.Lenrth)]; walk the line between good readable code and efficient
-        }
+        //    //we could make this shorter
+        //    //return rooms[new Random().Next(rooms.Lenrth)]; walk the line between good readable code and efficient
+        //}
 
     }//end Class
-}//end class
+    }//end class
 //end namespace

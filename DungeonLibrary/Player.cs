@@ -25,12 +25,12 @@ namespace DungeonLibrary
             switch (PlayerFlavor)
             {
                 case Flavor.Louise:
-                    HitChance += 5;
+                    HitChance += 1;
                     break;
                 case Flavor.Bob:
                     break;
                 case Flavor.Tina:
-                    HitChance -= 4;
+                    HitChance -= 1;
                     break;
                 case Flavor.Linda:
                     break;
@@ -39,7 +39,7 @@ namespace DungeonLibrary
                 case Flavor.JimmyJunior:
                     break;
                 case Flavor.CanadianJesus:
-                    HitChance -= 5;
+                    HitChance -= 1;
                     break;
                 default:
                     break;
