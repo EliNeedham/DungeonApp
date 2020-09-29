@@ -12,22 +12,75 @@ namespace Dungeon
     {
         static void Main(string[] args)
         {
+            #region ==================WEAPONS===========================
+
+
+            //TODO 2. Create a weapon
+            Weapon fryingPan = new Weapon(2, 8, "Frying Pan", 10, true);
+            Weapon mapleSyrup = new Weapon(2, 8, "A squeezer bottle full of maple syrup", 6, false);
+            Weapon rollingPin = new Weapon(2, 6, "Rolling Pin", 6, false);
+            Weapon meatMan = new Weapon(0, 6, "Meat Man", 12, true);
+            Weapon keyboard = new Weapon(2, 6, "Gene's Keyboard", 6, false);
+            Weapon ninjaStar = new Weapon(4, 8, "Bob's credit card cut into a ninja star", 6, false);
+            Weapon spatula = new Weapon(2, 4, "Burger Spatula", 16, false);
+            Weapon cheeseGrater = new Weapon(2, 4, "Cheese Grater", 14, false);
+            Weapon mrBusiness = new Weapon(1, 2, "Mr Business", 5, false);
+            #endregion
+
+            #region ===================Players==========================
+
+
+            //TODO 1. Create a player
+            //d di 1-20 is hit chance - if you have block of 20 then you have to roll at least a 10 to even hit them - you could add armor to make yourself hard to hit, block - damage absorption is 
+            //
+            Player pLouise = new Player("Louise Belcher", 79, 4, 40, 40, Flavor.Louise, ninjaStar);
+            Player pBob = new Player("Bob Belcher", 65, 8, 36, 40, Flavor.Bob, spatula);
+            Player pTina = new Player("Tina Belcher", 65, 8, 40, 40, Flavor.Tina, meatMan);
+            Player pLinda = new Player("Linda Belcher", 70, 6, 40, 40, Flavor.Linda, rollingPin);
+            Player pGene = new Player("Gene Belcher", 63, 10, 40, 40, Flavor.Gene, keyboard);
+            Player pJimmyJunior = new Player("Jimmy Junior", 63, 6, 38, 40, Flavor.JimmyJunior, cheeseGrater);
+            Player pCanadianJesus = new Player("Canadian Jesus", 70, 4, 40, 48, Flavor.CanadianJesus, mapleSyrup);
+            Player[] players = { pLouise, pBob, pTina, pLinda, pGene, pJimmyJunior, pCanadianJesus };
+            #endregion
+
             Console.Title = "Elizabeth's Bob's Burgers Dungeon";
             Console.WriteLine("Welcome to our humble commode! Abode? Whatever, it's a dungeon....\n with a real burger taste!\n\n");
+            Console.ReadLine();
+
+            #region Player Menu
 
 
 
+            Console.WriteLine("Pick your poison.");
+            Console.WriteLine("=======================");
+            Console.WriteLine("|  Player Options     |");
+            Console.WriteLine("|   A) Louise         |");
+            Console.WriteLine("|   B) Bob            |");
+            Console.WriteLine("|   C) Tina           |");
+            Console.WriteLine("|   D) Linda          |");
+            Console.WriteLine("|   E) Gene           |");
+            Console.WriteLine("|   F) Jimmy Junior   |");
+            Console.WriteLine("|   G) Canadian Jesus |");
+            Console.WriteLine("|   X) Exit           |");
+            Console.WriteLine("=======================");
+
+            #endregion
+            //TODO move weapons up here
+
+            ConsoleKey userPlayer = Console.ReadKey(true).Key;
+            Player player = null;
             #region Player Choice Switch inside while loop
             bool exitPlayerSwitch = false;
 
             while (exitPlayerSwitch == false)
             {
 
-                ConsoleKey userPlayer = Console.ReadKey(true).Key;
+
                 switch (userPlayer)
 
                 {
                     case ConsoleKey.A:
+                        player = new Player("Louise Belcher", 79, 4, 40, 40, Flavor.Louise, ninjaStar);
                         Console.WriteLine("Good idea, I knew you were smarter than you looked!\n");
                         Console.ReadLine();
                         Console.WriteLine("Winner gets to read Tina’s diary\n");
@@ -87,7 +140,7 @@ namespace Dungeon
                         Console.WriteLine("Whatever.\n");
                         Console.ReadLine();
                         exitPlayerSwitch = true;
-                        break;
+                        break; 
                     default:
                         Console.WriteLine("uuuuuuhhhhhh\n That didn't make any sense. Try again\n");
                         Console.ReadLine();
@@ -99,43 +152,6 @@ namespace Dungeon
 
 
             #endregion
-
-
-            #region ==================WEAPONS===========================
-
-
-            //TODO 2. Create a weapon
-            Weapon fryingPan = new Weapon(2, 8, "Frying Pan", 10, true);
-            Weapon mapleSyrup = new Weapon(2, 8, "A squeezer bottle full of maple syrup", 6, false);
-            Weapon rollingPin = new Weapon(2, 6, "Rolling Pin", 6, false);
-            Weapon meatMan = new Weapon(0, 6, "Meat Man", 12, true);
-            Weapon keyboard = new Weapon(2, 6, "Gene's Keyboard", 6, false);
-            Weapon ninjaStar = new Weapon(4, 8, "Bob's credit card cut into a ninja star", 6, false);
-            Weapon spatula = new Weapon(2, 4, "Burger Spatula", 16, false);
-            Weapon cheeseGrater = new Weapon(2, 4, "Cheese Grater", 14, false);
-            Weapon mrBusiness = new Weapon(1, 2, "Mr Business", 5, false);
-            #endregion
-
-            #region ===================Players==========================
-
-
-            //TODO 1. Create a player
-            //d di 1-20 is hit chance - if you have block of 20 then you have to roll at least a 10 to even hit them - you could add armor to make yourself hard to hit, block - damage absorption is 
-            //
-            Player pLouise = new Player("Louise Belcher", 79, 4, 40, 40, Flavor.Louise, ninjaStar);
-            Player pBob = new Player("Bob Belcher", 65, 8, 36, 40, Flavor.Bob, spatula);
-            Player pTina = new Player("Tina Belcher", 65, 8, 40, 40, Flavor.Tina, meatMan);
-            Player pLinda = new Player("Linda Belcher", 70, 6, 40, 40, Flavor.Linda, rollingPin);
-            Player pGene = new Player("Gene Belcher", 63, 10, 40, 40, Flavor.Gene, keyboard);
-            Player pJimmyJunior = new Player("Jimmy Junior", 63, 6, 38, 40, Flavor.JimmyJunior, cheeseGrater);
-            Player pCanadianJesus = new Player("Canadian Jesus", 70, 4, 40, 48, Flavor.CanadianJesus, mapleSyrup);
-            Player[] players = { pLouise, pBob, pTina, pLinda, pGene, pJimmyJunior, pCanadianJesus };
-            #endregion
-
-            //TODO 3. Create a loop for the room and the monster
-
-            //TODO 4. Create a room
-            //the food truck
 
             #region ===========================Rooms Array=================================
 
@@ -153,9 +169,13 @@ namespace Dungeon
 
             #region =======================Monsters===================================
 
-            MonsterMaster Gayle = new MonsterMaster("Gayle", 30, 36, 50, 25, 2, 6, "a bespectacled, fanny pack wearing, incredibly gullible cat lady who happens to be Linda’s younger sister. Emotionally fragile, marginally confused and destined to be single - even going so far as to play pretend every night before bed that she's taking shelter from a nuclear apocalypse in which she is the sole survivor, \"especially the men, so it's okay to sleep alone.\"  Her three cats are looking daggers at you, Jean Paw'd Van Damme, Pinkeye and Mr.Business – who really means business.", true, false, false, false, false, false);
-            MonsterMaster JimmyPesto = new MonsterMaster("Jimmy Pesto", 30, 40, 55, 30, 4, 6, "o	Handsome (despite the cleft chin and brown pompadour) and the owner of a successful Italian restaurant, Jimmy Pesto is Bob’s nemesis.", false, false, true, false, false, false);
+            MonsterMaster Gayle = new MonsterMaster("Gayle", 30, 36, 50, 25, 2, 6, "a bespectacled, fanny pack wearing, incredibly gullible cat lady who happens to be Linda’s younger sister. Emotionally fragile, marginally confused and destined to be single - even going so far as to play pretend every night before bed that she's taking shelter from a nuclear apocalypse in which she is the sole survivor, \"especially the men, so it's okay to sleep alone.\"  Her three cats are looking daggers at you, Jean Paw'd Van Damme, Pinkeye and Mr.Business – who really means business.", false, true);
+            MonsterMaster JimmyPesto = new MonsterMaster("Jimmy Pesto", 30, 40, 55, 30, 4, 6, "o	Handsome (despite the cleft chin and brown pompadour) and the owner of a successful Italian restaurant, Jimmy Pesto is Bob’s nemesis.", true, false);
             Monster m = new Monster("test monster", 50, 50, 51, 2, 5, 8, "testy monster");
+
+            //TODO use dictionary instead after we talk about dictionaries - single id
+            MonsterMaster[] monsters = { Gayle, JimmyPesto };
+            //have the rooms at the same index matcht the monster
 
             #endregion
 
@@ -175,90 +195,117 @@ namespace Dungeon
             //Create a loop for the menu of option
 
             #region ===================== LOOP FOR MENU OF OPTIONS ===================================
-
-
-            bool reload = false;
+            bool exit = false;
+            int roomCounter = 0;
 
             do
             {
-                Console.WriteLine("======================");
-                Console.WriteLine("| Choose an action: |");
-                Console.WriteLine("|   A)ttack         |");
-                Console.WriteLine("|   H)url Insults   |");
-                Console.WriteLine("|   R)un Away       |");
-                Console.WriteLine("|   Q)uit           |");
-                Console.WriteLine("|   P)layer Deets   |");
-                Console.WriteLine("|   M)uenster Deets |");
-                Console.WriteLine("======================");
-
-                ConsoleKey userChoice = Console.ReadKey(true).Key;
-                Console.Clear();
-                switch (userChoice)
+                bool reload = false;
+                MonsterMaster monster = monsters[roomCounter];
+                //display rooom before the counter updates - if it doesn't work well here then update inside of the switch
+                roomCounter++;// test this to see if it works
+                do
                 {
-                    case ConsoleKey.A:
-                        //11. TODO handle an attack sequence
-                        Console.WriteLine("\nYou boldy advance on the monster with");
-                        //12. Handle if the player wins
-                        break;
-                    case ConsoleKey.H:
-                        Console.WriteLine("\nYou hurl your most poignant insult at the beast.");
-                        //TODO handle insult sequence 1 in 4 chance of causing damage and then monster gets to attack
-                        break;
-                    case ConsoleKey.R:
-                        Console.WriteLine("\nAnthrax! Run for your lives!!");
-                        //TODO insert insult array randomizer here???
-                        //13. Monster getting a free attack
+                    Console.WriteLine("======================");
+                    Console.WriteLine("| Choose an action: |");
+                    Console.WriteLine("|   A)ttack         |");
+                    Console.WriteLine("|   H)url Insults   |");
+                    Console.WriteLine("|   B)ribe          |");
+                    Console.WriteLine("|   R)un Away       |");
+                    Console.WriteLine("|   Q)uit           |");
+                    Console.WriteLine("|   P)layer Deets   |");
+                    Console.WriteLine("|   M)uenster Deets |");
+                    Console.WriteLine("======================");
 
-                        //single attack call on doattack()
 
-                        //Console.WriteLine($"{monster.Name} attacks as you flee!");
-                        //Combat.DoAttack(monster, player); //free attack - attack of opportunity
-                        //Console.WriteLine();//creat empty line in console
 
-                        //14. Exiting the inner loop and getting a new room
-                        reload = true; //exiting the inner loop and will get a new room and monster
-                        break;
-                    case ConsoleKey.Q:
-                        Console.WriteLine("\nMr Frond would say that he is a knitter, not a quitter. Clearly, the same cannot be said for you.");
-                        break;
-                    case ConsoleKey.P:
-                        Console.WriteLine("\nPlayer Deets");
-                        //TODO Console.WriteLine(   PUT VAR CONTAINING PLAYER IN HERE);
-                        //Console.WriteLine("Monsters Defeated: " + score);
 
-                        break;
-                    case ConsoleKey.M:
-                        Console.WriteLine("\nMeunster Deets");
-                        //TODO Console.WriteLine(   PUT VAR CONTAINING MONSTER IN HERE);
-                        //AND MAYBE SOME INSULTS??? OR A RANDOMIZER FOR THE BURGER OF THE DAY?
-                        break;
-                    default:
-                        Console.WriteLine("I'm not risking any of those bugs getting into my peach cobbler no matter how stale it is. Try again!");
-                        reload = true;
-                        break;
-                }
-            } while (!reload);
+                    //TODO test this later
 
-            #endregion
-            //            //TODO 11. Handle an attack sequence
+                    ConsoleKey userChoice = Console.ReadKey(true).Key;
+                    Console.Clear();
+                    switch (userChoice)
+                    {
+                        case ConsoleKey.A:
+                            //11. TODO handle an attack sequence
+                            Console.WriteLine("\nYou boldy advance on the monster with");
+                            //12. Handle if the player wins
+                            //need if statement to check if monster is still alive if monster is alive you just break 
+                            //if monster is dead relaod = true  and go back to top of loop
+                            break;
+                        case ConsoleKey.H:
+                            Console.WriteLine("\nYou hurl your most poignant insult at the beast.");
+                            int random  = new Random().Next(1, 5);
+                            if (random == 4)
+                            {
+                                Console.WriteLine("\nyour insult killed the beast");
+                                reload = true;
+                            }
+                            break;
+                        case ConsoleKey.B:
+                            Console.WriteLine("\nBribe");
+                            monster.Block -= 2;
+                            Combat.DoAttack(monster, player);
+                            break;
+                        case ConsoleKey.R:
+                            Console.WriteLine("\nAnthrax! Run for your lives!!");
+                            Combat.DoAttack(monster, player);
+                            //TODO insert insult array randomizer here???
+                            //13. Monster getting a free attack
 
-            //            //TODO 12. Handle if the player wins
+                            //single attack call on doattack()
 
-            //            //TODO 13. Monster getting a free attack
+                            //Console.WriteLine($"{monster.Name} attacks as you flee!");
+                            //Combat.DoAttack(monster, player); //free attack - attack of opportunity
+                            //Console.WriteLine();//creat empty line in console
 
-            //            //TODO 14. Exiting the inner loop and getting a new room
+                            //14. Exiting the inner loop and getting a new room
+                            reload = true; //exiting the inner loop and will get a new room and monster
+                            break;
+                        case ConsoleKey.Q:
+                            Console.WriteLine("\nMr Frond would say that he is a knitter, not a quitter. Clearly, the same cannot be said for you.");
+                            break;
+                        case ConsoleKey.P:
+                            Console.WriteLine("\nPlayer Deets");
+                            //TODO Console.WriteLine(   PUT VAR CONTAINING PLAYER IN HERE);
+                            //Console.WriteLine("Monsters Defeated: " + score);
 
-            //            //TODO 15. Print out Player info
+                            break;
+                        case ConsoleKey.M:
+                            Console.WriteLine("\nMeunster Deets");
+                            //TODO Console.WriteLine(   PUT VAR CONTAINING MONSTER IN HERE);
+                            //AND MAYBE SOME INSULTS??? OR A RANDOMIZER FOR THE BURGER OF THE DAY?
+                            break;
+                        default:
+                            Console.WriteLine("\nI'm not risking any of those bugs getting into my peach cobbler no matter how stale it is. Try again!");
+                            break;
+                    }
+                } while (!reload && !exit);
 
-            //            //TODO 16. print out monster info
 
-            //            //TODO 17. Check the players life before continuing
+            } while (!exit);
 
-            //    }
 
-            //    }
+                #endregion
+                //            //TODO 11. Handle an attack sequence
 
-        }//end main ()
+                //            //TODO 12. Handle if the player wins
+
+                //            //TODO 13. Monster getting a free attack
+
+                //            //TODO 14. Exiting the inner loop and getting a new room
+
+                //            //TODO 15. Print out Player info
+
+                //            //TODO 16. print out monster info
+
+                //            //TODO 17. Check the players life before continuing
+
+                //    }
+
+                //    }
+
+            }//end main ()
 
         //private static string GetRoom()
         //{

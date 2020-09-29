@@ -9,7 +9,7 @@ namespace DungeonLibrary
     public class Player : Character
     {
         public Flavor PlayerFlavor { get; set; }
-        public Weapon EquippedWeapon { get; set; }
+        public Weapon EquippedWeapon { get; set; }//wouldn't need equipped weapon, wouldn't need block 4 new var, insult, compassion, bribery, and defense - monsters would have base attack - woudl be their best base attack vs your best - something could just automatically happen instead of returning the attack. compassion to fi
 
         public Player(string name, int hitChance, int block, int life, int maxLife, Flavor playerFlavor, Weapon equippedWeapon)
         {

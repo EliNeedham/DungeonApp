@@ -13,6 +13,8 @@ namespace DungeonLibrary
         //one that controls overall battle seq - player attack monster - monster attack player
 
         //make method that handles indi attacks first
+        //doBribe((Character attacker, Character defender)
+        // true/false is most basic monster is weak to this or not - more advanced would be 1-10 - at which point could do dice roll Louise is good at insults so += 3 
 
         public static void DoAttack(Character attacker, Character defender)
         //trying ot make it generic so that we can reuse for both player and attacker

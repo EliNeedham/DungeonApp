@@ -10,21 +10,14 @@ namespace DungeonMonster
     public class MonsterMaster : Monster
     {
         //TODO I wanted to give the monsters superpowers here but it seems like I would need to create more than block and hit chance etc in order to really have the superpowers do anything. I might take this out based on how far I get
-        public bool HasMrBusiness { get; set; }
-        public bool ABS { get; set; }
-        public bool IsPopular { get; set; }
-        public bool CanShutDownYourBusiness { get; set; }
-        public bool CanEvictYou { get; set; }
-        public bool DangerZone { get; set; }
+        public bool AcceptsBribes { get; set; }
+        public bool EasilyInsulted { get; set; }
 
-        public MonsterMaster(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool hasMrBusiness, bool aBS, bool isPopular, bool canShutDownYourBusiness, bool canEvictYou, bool dangerZone) :base(name, life, maxLife, hitChance, block, minDamage, maxDamage, description) 
+        public MonsterMaster(string name, int life, int maxLife, int hitChance, int block, int minDamage, int maxDamage, string description, bool acceptsBribes, bool easilyInsulted) :base(name, life, maxLife, hitChance, block, minDamage, maxDamage, description) 
         {
-            HasMrBusiness = hasMrBusiness;
-            ABS = aBS;
-            IsPopular = isPopular;
-            CanShutDownYourBusiness = canShutDownYourBusiness;
-            CanEvictYou = canEvictYou;
-            DangerZone = dangerZone;
+            AcceptsBribes = acceptsBribes;
+            EasilyInsulted = easilyInsulted;
+
         }
 
         public MonsterMaster()
@@ -33,36 +26,27 @@ namespace DungeonMonster
         }
 
         public override string ToString()
-        //{
-        //    return base.ToString() +
-        //                    HasMrBusiness  +
-        //                    //== false ? " " : HasMrBusiness tried to figure out if we coudl turn what prints out on or off based on bool being true or not
-        //                    ABS +
-        //                    IsPopular +
-        //                    CanShutDownYourBusiness  +           
-        //                    CanEvictYou +
-        //                    DangerZone;
-        //}
         {
-            //return base.ToString() + $"{!HasMrBusiness ? " " : HasMrBusiness";
-                            //== false ? " " : HasMrBusiness tried to figure out if we coudl turn what prints out on or off based on bool being true or not
-                            //ABS +
-                            //IsPopular +
-                            //CanShutDownYourBusiness +
-                            //CanEvictYou +
-                            //DangerZone;
-        }
-
-        public override int CalcBlock()
-        {
-            int calculatedBlock = Block;
-            if (HasMrBusiness || IsPopular)
-            {
-                calculatedBlock += calculatedBlock / 2;
-            }
-            return calculatedBlock;
+            return string.Format("\n*******************************************************************************\n" +
+                                 "\n               " + Name + "                       \n" +
+                                 "\n" + Description + " \n\n" +
+                                 "Life: " + Life + "\nMin Damage: " + MinDamage +
+                                 "\nMax Damage: " + MaxDamage + "\nBlock: " + Block + "\n");
 
         }
+
+     // =============9.28.20 after convo with Jared not sure I need to override the calcblock below, just need to set up the bribe and insult if else statements inside the switch for player choice on attack options etc
+
+    //public override int CalcBlock()
+    //    {
+    //        int calculatedBlock = Block;
+    //        if (HasMrBusiness || IsPopular)
+    //        {
+    //            calculatedBlock += calculatedBlock / 2;
+    //        }
+    //        return calculatedBlock;
+
+    //    }
 
         
     }//end class
