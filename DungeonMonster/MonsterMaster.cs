@@ -25,14 +25,18 @@ namespace DungeonMonster
 
         }
 
+        //public override string ToString()
+        //{
+        //    return string.Format("\n*******************************************************************************\n" +
+        //                         "\n               " + Name + "                       \n" +
+        //                         "\n" + Description + " \n\n");
+        //}
+
         public override string ToString()
         {
-            return string.Format("\n*******************************************************************************\n" +
-                                 "\n               " + Name + "                       \n" +
-                                 "\n" + Description + " \n\n" +
-                                 "Life: " + Life + "\nMin Damage: " + MinDamage +
-                                 "\nMax Damage: " + MaxDamage + "\nBlock: " + Block + "\n");
-
+            return string.Format("Life: " + Life + "\nMin Damage: " + MinDamage +
+                                 "\nMax Damage: " + MaxDamage + "\nBlock: " + Block + "\n"
+                );
         }
 
      // =============9.28.20 after convo with Jared not sure I need to override the calcblock below, just need to set up the bribe and insult if else statements inside the switch for player choice on attack options etc
