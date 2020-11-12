@@ -229,7 +229,7 @@ namespace Dungeon
                             "\nYour opponent is " + monster.Name, monster.Description);
                         //display rooom before the counter updates - if it doesn't work well here then update inside of the switch
                         roomCounter++;// test this to see if it works
-                        while (reload == false && monster.Life > 0)
+                        while (reload == false && monster.Life > 0 && player.Life > 0)
                         {
                             Console.WriteLine();
                             Console.WriteLine("======================");
@@ -259,8 +259,8 @@ namespace Dungeon
                                         Console.ForegroundColor = ConsoleColor.Green;
                                         Console.WriteLine("\nYou killed {0}\n", monster.Name);
                                         Console.ResetColor();
+                                        score++;
                                     }
-                                    score++;
                                     break;
 
                                 case ConsoleKey.H:
@@ -346,24 +346,28 @@ namespace Dungeon
                                     break;
                             }
 
-                            if (player.Life <= 0)
-                            {
-                                Console.WriteLine("Dude...... you died. \a");
-                                //now we need to break out of both loops using the bool
-                                exit = true; //break out of both loops
-                            }
+                            //if (player.Life <= 0)
+                            //{
+                            //    Console.WriteLine("Dude...... you died. \a");
+                            //    //now we need to break out of both loops using the bool
+                            //    exit = true; //break out of both loops
+                            //}
                             //if (monster.Life <= 0)
                             //{
 
                             //}
                         } /*while (!reload && !exitRooms) ;*/
+                        if (player.Life <= 0)
+                        {
+                            Console.WriteLine("Dude...... you died. \a");
+                            //now we need to break out of both loops using the bool
+                            exit = true; //break out of both loops
+                            exitPlayerSwitch = true;
+                        }
 
-
-                    }
-
-
+                    } // end exitRooms == false && exit == false
                     #endregion
-                }
+                } // end exitPlayerSwitch == false
 
 
                 #endregion
@@ -373,7 +377,7 @@ namespace Dungeon
 
 
 
-        }//end main ()
+        }//end main()
 
     }//end Class
 }//end class
