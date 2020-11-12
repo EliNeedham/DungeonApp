@@ -17,7 +17,7 @@ namespace Dungeon
             MonsterMaster Gayle = new MonsterMaster("Gayle", 30, 36, 50, 25, 2, 6, "a bespectacled, fanny pack wearing, incredibly gullible cat lady who happens to be Linda’s younger sister. Emotionally fragile, marginally confused and destined to be single - even going so far as to play pretend every night before bed that she's taking shelter from a nuclear apocalypse in which she is the sole survivor, \"especially the men, so it's okay to sleep alone.\"  Her three cats are looking daggers at you, Jean Paw'd Van Damme, Pinkeye and Mr.Business – who really means business.", false, true);
             MonsterMaster JimmyPesto = new MonsterMaster("Jimmy Pesto", 30, 40, 55, 30, 4, 6, "Handsome (despite the cleft chin and brown pompadour) and the owner of a successful Italian restaurant, Jimmy Pesto is Bob’s nemesis.", true, false);
             MonsterMaster Fischoeder = new MonsterMaster("Mr. Fischoeder", 30, 40, 60, 40, 2, 8, "One white cat away from being a supervillain, Mr. Fischoeder wears a white suit, an eye patch, and sometimes a white cape, and drives around town in a golf buggy. Loose morals allow him to cut corners and blame others to protect himself.", true, false);
-            MonsterMaster Tina = new MonsterMaster("Tina", 30, 40, 58, 40, 2, 4, "/“Uuuuuuuuhhhhhhhhh………./” You recognize Tina’s stage-fright groan anywhere. Usually harmless and disarming, this tushie loving teenager is full of raging hormones and on a mission to make Jimmy Junior her dance partner. You’re the only thing standing between her and her dreams! Well you…. Bob…. Gene….. the mailman, some people off the street (who invited them?) and that kid from next door…. But that’s not the point! You’re the first in line.", false, true);
+            MonsterMaster Tina = new MonsterMaster("Tina", 30, 40, 58, 40, 2, 4, "“Uuuuuuuuhhhhhhhhh……….” You recognize Tina’s stage-fright groan anywhere. Usually harmless and disarming, this tushie loving teenager is full of raging hormones and on a mission to make Jimmy Junior her dance partner. You’re the only thing standing between her and her dreams! Well you…. Bob…. Gene….. the mailman, some people off the street (who invited them?) and that kid from next door…. But that’s not the point! You’re the first in line.", false, true);
             MonsterMaster Frond = new MonsterMaster("Mr. Frond", 30, 40, 55, 30, 4, 6, "A tall drink of annoying, Mr. Frond is a geeky, nervous, perhaps fruity and perpetually flustered guidance counselor. He used to sell hand-knitted Doctor Who scarves on Etsy until a PBS lawyer sent him a cease and desist letter and he was elected seventh grade class secretary after hiding votes for his opponent.", true, true);
             MonsterMaster Linda = new MonsterMaster("Linda", 30, 40, 55, 40, 4, 6, "Dinner Theater (more like Drink Theater in this case) brings out the crazy in her. This is not the fun-loving Linda we know so well, but the dramatic crazed Linda. \"The Show Must Go On\" and she is willing to go to any lengths to achieve the age-old adage", true, false);
             MonsterMaster Hugo = new MonsterMaster("Hugo the Health Inspector", 30, 36, 50, 25, 2, 6, "A short, blond, pear-shaped man, he’s a City Health Inspector (and former Nudist), which he takes very seriously. Hugo and Linda were briefly engaged before she dumped him for Bob via rap on his answering machine, needless to say he isn’t a fan of Bob’s Burgers. ", false, true);
@@ -103,10 +103,8 @@ namespace Dungeon
             Console.WriteLine("Welcome to our humble commode! Abode? Whatever, it's a dungeon....\n with a real burger taste!\n");
             Console.ReadLine();
 
-
-            Player player = null;
-            #region Player Choice Switch inside while loop
-            bool exitPlayerSwitch = false;
+            int score = 0;
+            bool exit = false;
             do
             {
                 #region Player Menu
@@ -127,283 +125,255 @@ namespace Dungeon
                 #endregion
 
                 ConsoleKey userPlayer = Console.ReadKey(true).Key;
-            }
-            while (exitPlayerSwitch == false)
-            {
+                Player player = null;
+                #region Player Choice Switch inside while loop
+                bool exitPlayerSwitch = false;
 
-
-                switch (userPlayer)
-
+                while (exitPlayerSwitch == false)
                 {
-                    case ConsoleKey.A:
-                        player = pLouise;
-                        Console.WriteLine("Good idea, I knew you were smarter than you looked!\n");
-                        Console.ReadLine();
-                        Console.WriteLine("Winner gets to read Tina’s diary\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.B:
-                        player = pBob;
-                        Console.WriteLine("Hit me with your best shallot!\n");
-                        Console.ReadLine();
-                        Console.WriteLine("Winner gets to come up with tomorrow's \"Burger of the Day\"\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.C:
-                        player = pTina;
-                        Console.WriteLine("uhhhhhhhhhhhh\n Tina groans from stagefright...\nTime for the charm bomb to explode.\n");
-                        Console.ReadLine();
-                        Console.WriteLine("Winner gets to kiss Jimmy Junior's cheeks\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.D:
-                        player = pLinda;
-                        Console.WriteLine("I love showers and mornings and bologna and turtles!\n");
-                        Console.ReadLine();
-                        Console.WriteLine("If anything happens don’t call AAA because we don’t have them and we owe them money from when we did.\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.E:
-                        player = pGene;
-                        Console.WriteLine("You should know when you hold hands with me, you are holding hands with everything I've ever eaten.\n");
-                        Console.ReadLine();
-                        Console.WriteLine("I'm not taking the burger suit off. Even if we win.\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.F:
-                        player = pJimmyJunior;
-                        Console.WriteLine("I'm the Katniss to your Pita bread.\n");
-                        Console.ReadLine();
-                        Console.WriteLine("You haven't won until you've beaten me in a dance off!\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.G:
-                        player = pCanadianJesus;
-                        Console.WriteLine("Seriously? I'm not even from Canada....\n");
-                        Console.ReadLine();
-                        Console.WriteLine("May the best... may someone win so we can get this over with.\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                    case ConsoleKey.X:
-                        Console.WriteLine("Whatever.\n");
-                        Console.ReadLine();
-                        exitPlayerSwitch = true;
-                        break;
-                    default:
-                        Console.WriteLine("uuuuuuhhhhhh\n That didn't make any sense. Try again\n");
-                        Console.ReadLine();
-                        Console.Clear();
-                        exitPlayerSwitch = true;
-                        break;
-                }
-
-            }
 
 
-            #endregion
+                    switch (userPlayer)
 
-
-
-
-
-            //Console.WriteLine(rooms[0], monsters[0]);
-            //Console.WriteLine(m);
-
-
-
-
-            //TODO this might need to be changed later in order to assign a specific monster to a room - not sure how to do that yet
-
-            //5. Create a monster
-
-            //Create a loop for the menu of option
-
-            #region ===================== LOOP FOR MENU OF OPTIONS ===================================
-            bool exit = false;
-            int roomCounter = 0;
-
-            do
-            {
-                bool reload = false;
-                MonsterMaster monster = monsters[roomCounter];
-                string room = rooms[roomCounter];
-                Console.WriteLine("=========================================================================================");
-                Console.WriteLine(room);
-                Console.WriteLine(
-                    "==================================================================" +
-                    "\nYou opponent is " + monster.Name, monster.Description);
-                //display rooom before the counter updates - if it doesn't work well here then update inside of the switch
-                roomCounter++;// test this to see if it works
-                do
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("======================");
-                    Console.WriteLine("| Choose an action: |");
-                    Console.WriteLine("|   A)ttack         |");
-                    Console.WriteLine("|   H)url Insults   |");
-                    Console.WriteLine("|   B)ribe          |");
-                    Console.WriteLine("|   R)un Away       |");
-                    Console.WriteLine("|   Q)uit           |");
-                    Console.WriteLine("|   P)layer Deets   |");
-                    Console.WriteLine("|   M)uenster Deets |");
-                    Console.WriteLine("======================");
-
-
-
-
-                    //TODO test this later
-
-                    ConsoleKey userChoice = Console.ReadKey(true).Key;
-                    Console.Clear();
-                    switch (userChoice)
                     {
                         case ConsoleKey.A:
-                            //11. TODO handle an attack sequence
-                            Console.WriteLine($"\nYou boldy advance on the monster with {player.EquippedWeapon}");
-                            Combat.DoBattle(player, monster);
-
-                            if (monster.Life <= 0)
-                            {
-                                Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("\nYou killed {0}\n", monster.Name);
-                                Console.ResetColor();
-                            }
-                            reload = true;
-                            break;
-                        case ConsoleKey.H:
-                            Console.WriteLine("\nYou hurl your most poignant insult at the beast.");
-                            //TODO Insert the insult array here
-                            if (monster.EasilyInsulted == false)
-                            {
-                                Console.WriteLine("Ha! Like you could break me with petty words. I'm not easily insulted!");
-                            }
-                            else
-                            {
-                                int random = new Random().Next(1, 4);
-                                if (random == 3)
-                                {
-                                    Console.WriteLine("\nYour insult killed the beast");
-                                    reload = true;
-                                }
-                                else
-                                {
-                                    //TODO could have customized responses per monster here
-                                    Console.WriteLine("Nice try pipsqueak");
-                                    Console.WriteLine("Your ridicule game is ridiculously lame.... try again.");
-                                }
-                            }
-                            if (monster.Life <= 0)
-                            {
-                                Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine("\nYou killed {0}\n", monster.Name);
-                                Console.ResetColor();
-                                reload = true;
-                            }
-
+                            player = pLouise;
+                            Console.WriteLine("Good idea, I knew you were smarter than you looked!\n");
+                            Console.ReadLine();
+                            Console.WriteLine("Winner gets to read Tina’s diary\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
                             break;
                         case ConsoleKey.B:
-                            Console.WriteLine("\nBribe");
-                            if (monster.AcceptsBribes == true)
-                            {
-                                Console.WriteLine("Bribery you say? I'm so incensesd I find it difficult to even fight!");
-                                monster.Block -= 8;
-                                monster.HitChance -= 10;
-                                Combat.DoAttack(monster, player);
-                                if (monster.Life <= 0)
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.WriteLine("\nYou killed {0}\n", monster.Name);
-                                    Console.ResetColor();
-                                    reload = true;
-                                }
-                            }
-
+                            player = pBob;
+                            Console.WriteLine("Hit me with your best shallot!\n");
+                            Console.ReadLine();
+                            Console.WriteLine("Winner gets to come up with tomorrow's \"Burger of the Day\"\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
                             break;
-                        case ConsoleKey.R:
-                            Console.WriteLine("\nAnthrax! Run for your lives!!");
-                            Combat.DoAttack(monster, player);
-                            //TODO insert insult array randomizer here???
-                            //13. Monster getting a free attack
-
-                            //single attack call on doattack()
-
-                            //Console.WriteLine($"{monster.Name} attacks as you flee!");
-                            //Combat.DoAttack(monster, player); //free attack - attack of opportunity
-                            //Console.WriteLine();//creat empty line in console
-
-                            //14. Exiting the inner loop and getting a new room
-                            reload = true; //exiting the inner loop and will get a new room and monster
+                        case ConsoleKey.C:
+                            player = pTina;
+                            Console.WriteLine("uhhhhhhhhhhhh\n Tina groans from stagefright...\nTime for the charm bomb to explode.\n");
+                            Console.ReadLine();
+                            Console.WriteLine("Winner gets to kiss Jimmy Junior's cheeks\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
                             break;
-                        case ConsoleKey.Q:
-                            Console.WriteLine("\nMr Frond would say that he is a knitter, not a quitter. Clearly, the same cannot be said for you.");
+                        case ConsoleKey.D:
+                            player = pLinda;
+                            Console.WriteLine("I love showers and mornings and bologna and turtles!\n");
+                            Console.ReadLine();
+                            Console.WriteLine("If anything happens don’t call AAA because we don’t have them and we owe them money from when we did.\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
+                            break;
+                        case ConsoleKey.E:
+                            player = pGene;
+                            Console.WriteLine("You should know when you hold hands with me, you are holding hands with everything I've ever eaten.\n");
+                            Console.ReadLine();
+                            Console.WriteLine("I'm not taking the burger suit off. Even if we win.\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
+                            break;
+                        case ConsoleKey.F:
+                            player = pJimmyJunior;
+                            Console.WriteLine("I'm the Katniss to your Pita bread.\n");
+                            Console.ReadLine();
+                            Console.WriteLine("You haven't won until you've beaten me in a dance off!\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
+                            break;
+                        case ConsoleKey.G:
+                            player = pCanadianJesus;
+                            Console.WriteLine("Seriously? I'm not even from Canada....\n");
+                            Console.ReadLine();
+                            Console.WriteLine("May the best... may someone win so we can get this over with.\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
+                            break;
+                        case ConsoleKey.X:
+                            Console.WriteLine("Whatever.\n");
+                            Console.ReadLine();
+                            exitPlayerSwitch = true;
                             exit = true;
-                            //reload = true;
-                            break;
-                        case ConsoleKey.P:
-                            Console.WriteLine("\nPlayer Deets");
-                            Console.WriteLine(player);
-                            //Console.WriteLine("Monsters Defeated: " + score);
-
-                            break;
-                        case ConsoleKey.M:
-                            Console.WriteLine("\nMeunster Deets");
-                            Console.WriteLine(monster);
-                            //AND MAYBE SOME INSULTS??? OR A RANDOMIZER FOR THE BURGER OF THE DAY?
                             break;
                         default:
-                            Console.WriteLine("\nI'm not risking any of those bugs getting into my peach cobbler no matter how stale it is. Try again!");
+                            Console.WriteLine("uuuuuuhhhhhh\n That didn't make any sense. Try again\n");
+                            Console.ReadLine();
+                            Console.Clear();
+                            exitPlayerSwitch = true;
                             break;
                     }
-                } while (!reload && !exit);
+                    #region ===================== LOOP ROOM MENU OF OPTIONS =========================
+                    bool exitRooms = false;
+                    int roomCounter = 0;
+
+                    while (exitRooms == false && exit == false)
+                    {
+
+                        bool reload = false;
+                        MonsterMaster monster = monsters[roomCounter];
+                        string room = rooms[roomCounter];
+                        Console.WriteLine("=========================================================================================");
+                        Console.WriteLine(room);
+                        Console.WriteLine(
+                            "==================================================================" +
+                            "\nYour opponent is " + monster.Name, monster.Description);
+                        //display rooom before the counter updates - if it doesn't work well here then update inside of the switch
+                        roomCounter++;// test this to see if it works
+                        while (reload == false && monster.Life > 0)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("======================");
+                            Console.WriteLine("| Choose an action: |");
+                            Console.WriteLine("|   A)ttack         |");
+                            Console.WriteLine("|   H)url Insults   |");
+                            Console.WriteLine("|   B)ribe          |");
+                            Console.WriteLine("|   R)un Away       |");
+                            Console.WriteLine("|   Q)uit           |");
+                            Console.WriteLine("|   P)layer Deets   |");
+                            Console.WriteLine("|   M)uenster Deets |");
+                            Console.WriteLine("======================");
+                                                                                 
+                            //TODO test this later
+
+                            ConsoleKey userChoice = Console.ReadKey(true).Key;
+                            Console.Clear();
+                            switch (userChoice)
+                            {
+                                case ConsoleKey.A:
+                                    //11. TODO handle an attack sequence
+                                    Console.WriteLine($"\nYou boldy advance on the monster with {player.EquippedWeapon}");
+                                    Combat.DoBattle(player, monster);
+
+                                    if (monster.Life <= 0)
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("\nYou killed {0}\n", monster.Name);
+                                        Console.ResetColor();
+                                    }
+                                    score++;
+                                    break;
+
+                                case ConsoleKey.H:
+                                    Console.WriteLine("\nYou hurl your most poignant insult at the beast.");
+                                    //TODO Insert the insult array here
+                                    if (monster.EasilyInsulted == false)
+                                    {
+                                        Console.WriteLine("Ha! Like you could break me with petty words. I'm not easily insulted!");
+                                    }
+                                    else
+                                    {
+                                        int random = new Random().Next(1, 4);
+                                        if (random == 3)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.WriteLine("\nYour insult killed {0}\n", monster.Name);
+                                            Console.ResetColor();
+                                            reload = true;
+                                        }
+                                        else
+                                        {
+                                            //TODO could have customized responses per monster here
+                                            Console.WriteLine("Nice try pipsqueak.");
+                                            Console.WriteLine("Your ridicule game is ridiculously lame.... try again.");
+                                        }
+                                    }
+                                    break;
+
+                                case ConsoleKey.B:
+                                    if (monster.AcceptsBribes == true)
+                                    {
+                                        Console.WriteLine("Bribery you say? I'm so incensesd I find it difficult to even fight!");
+                                        monster.Block -= 8;
+                                        monster.HitChance -= 10;
+                                        Combat.DoAttack(player, monster);
+                                        if (monster.Life <= 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.WriteLine("\nYou killed {0}\n", monster.Name);
+                                            Console.ResetColor();
+                                            reload = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Your money is no good here! You'll have to be more creative.");
+                                    }
+
+                                    break;
+                                case ConsoleKey.R:
+                                    Console.WriteLine("\nAnthrax! Run for your lives!!");
+                                    Combat.DoAttack(monster, player);
+                                    //TODO insert insult array randomizer here???
+                                    //13. Monster getting a free attack
+
+                                    //single attack call on doattack()
+
+                                    //Console.WriteLine($"{monster.Name} attacks as you flee!");
+                                    //Combat.DoAttack(monster, player); //free attack - attack of opportunity
+                                    //Console.WriteLine();//creat empty line in console
+
+                                    //14. Exiting the inner loop and getting a new room
+                                    reload = true; //exiting the inner loop and will get a new room and monster
+                                    break;
+                                case ConsoleKey.Q:
+                                    Console.WriteLine("\nMr Frond would say that he is a knitter, not a quitter. Clearly, the same cannot be said for you.");
+                                    exitRooms = true;
+                                    reload = true;
+                                    break;
+                                case ConsoleKey.P:
+                                    Console.WriteLine("\nPlayer Deets");
+                                    Console.WriteLine(player);
+                                    //Console.WriteLine("Monsters Defeated: " + score);
+
+                                    break;
+                                case ConsoleKey.M:
+                                    Console.WriteLine("\nMeunster Deets");
+                                    Console.WriteLine(monster.Name + "\n" + monster.Description + "\n" + monster);
+                                    //AND MAYBE SOME INSULTS??? OR A RANDOMIZER FOR THE BURGER OF THE DAY?
+                                    break;
+                                default:
+                                    Console.WriteLine("\nI'm not risking any of those bugs getting into my peach cobbler no matter how stale it is. Try again!");
+                                    break;
+                            }
+
+                            if (player.Life <= 0)
+                            {
+                                Console.WriteLine("Dude...... you died. \a");
+                                //now we need to break out of both loops using the bool
+                                exit = true; //break out of both loops
+                            }
+                            //if (monster.Life <= 0)
+                            //{
+
+                            //}
+                        } /*while (!reload && !exitRooms) ;*/
+
+
+                    }
+
+
+                    #endregion
+                }
+
+
+                #endregion
 
 
             } while (!exit);
 
 
-            #endregion
-            //            //TODO 11. Handle an attack sequence
-
-            //            //TODO 12. Handle if the player wins
-
-            //            //TODO 13. Monster getting a free attack
-
-            //            //TODO 14. Exiting the inner loop and getting a new room
-
-            //            //TODO 15. Print out Player info
-
-            //            //TODO 16. print out monster info
-
-            //            //TODO 17. Check the players life before continuing
-
-            //    }
-
-            //    }
 
         }//end main ()
-
-
-        //public static string GetMonster()
-        //{
-
-
-        //    string monster = monsters[0];
-        //    return monster;
-        //}
-
 
     }//end Class
 }//end class
